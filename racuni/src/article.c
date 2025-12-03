@@ -3,7 +3,7 @@
 #include <string.h>
 #include "../include/article.h"
 
-// inserts article in sorted order by name
+
 int InsertArticleSorted(ArticlePtr head, char* name, int quantity, double price) {
     ArticlePtr prev = head;
     ArticlePtr temp = NULL;
@@ -27,7 +27,7 @@ int InsertArticleSorted(ArticlePtr head, char* name, int quantity, double price)
     return 0;
 }
 
-// frees entire article list
+
 int FreeAllArticles(ArticlePtr head) {
     ArticlePtr temp = NULL;
 

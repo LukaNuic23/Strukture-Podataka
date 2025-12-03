@@ -5,7 +5,7 @@
 #include "../include/receipt.h"
 #include "../include/article.h"
 
-// checks whether date is inside [from, to]
+
 static int DateInRange(char* date, char* from, char* to) {
     if (strcmp(date, from) < 0)
         return 0;
@@ -14,7 +14,7 @@ static int DateInRange(char* date, char* from, char* to) {
     return 1;
 }
 
-// calculates total spent and quantity for an item in a date range
+
 double TotalSpentOnItemInRange(
     ReceiptPtr head,
     char* itemName,
@@ -47,7 +47,7 @@ double TotalSpentOnItemInRange(
     return total;
 }
 
-// find the most expensive item (max price)
+
 int MostExpensiveItem(ReceiptPtr head, char* resultName, int maxLen) {
     double maxPrice = -1.0;
     char best[64] = "";
@@ -76,7 +76,7 @@ int MostExpensiveItem(ReceiptPtr head, char* resultName, int maxLen) {
     return 0;
 }
 
-// find the cheapest item (min price)
+
 int CheapestItem(ReceiptPtr head, char* resultName, int maxLen) {
     double minPrice = -1.0;
     char best[64] = "";
@@ -105,7 +105,7 @@ int CheapestItem(ReceiptPtr head, char* resultName, int maxLen) {
     return 0;
 }
 
-// helper: total quantity for a specific item in all receipts
+
 static int TotalQuantityForItem(ReceiptPtr head, char* name) {
     int sum = 0;
     ReceiptPtr r = head->next;
@@ -125,7 +125,7 @@ static int TotalQuantityForItem(ReceiptPtr head, char* name) {
     return sum;
 }
 
-// most purchased item across all receipts
+
 int MostPurchasedItem(ReceiptPtr head, char* resultName, int maxLen) {
     int maxQ = -1;
     char best[64] = "";
@@ -155,7 +155,7 @@ int MostPurchasedItem(ReceiptPtr head, char* resultName, int maxLen) {
     return 0;
 }
 
-// helper: calculates full sum of one receipt
+
 static double TotalValueOfReceipt(ReceiptPtr r) {
     double s = 0.0;
     ArticlePtr a = r->items->next;
@@ -168,7 +168,7 @@ static double TotalValueOfReceipt(ReceiptPtr r) {
     return s;
 }
 
-// compares two receipts by total sum
+
 int CompareTwoReceipts(ReceiptPtr r1, ReceiptPtr r2, double* sum1, double* sum2) {
     if (!r1 || !r2)
         return -1;
